@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+connectionSlice.js
+
+feedSlice.js
+requestSlice.js
+
+.gitignore
