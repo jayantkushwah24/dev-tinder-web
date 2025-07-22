@@ -8,19 +8,17 @@ import Feed from "./components/Feed";
 
 function App() {
   return (
-    <>
-      <Provider store={appStore}>
-        <BrowserRouter basename="/">
-          <Routes>
-            <Route path="/" element={<Body />}>
-              <Route path="/" element={<Feed />} />
-              <Route path="/profile" element={<Profile />} />
-            </Route>
-            <Route path="/login" element={<Login />} />
-          </Routes>
-        </BrowserRouter>
-      </Provider>
-    </>
+    <Provider store={appStore}>
+      <BrowserRouter basename="/">
+        <Routes>
+          <Route path="/" element={<Body />}>
+            <Route index element={<Feed />} />
+            <Route path="profile" element={<Profile />} />
+          </Route>
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

@@ -8,6 +8,7 @@ import { BASE_URL } from "../utils/constants";
 const Login = () => {
   const [emailId, setEmailId] = useState("jayant@gmail.com");
   const [password, setPassword] = useState("Jayant@1221");
+  const [error, setError] = useState("");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ const Login = () => {
       dispatch(addUser(response.data));
       navigate("/");
     } catch (error) {
-      console.error(error);
+      setError(error.response.data);
     }
   };
   return (
@@ -53,7 +54,7 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-
+            <p className="text-red-500">{error}</p>
             <button className="btn btn-neutral mt-4" onClick={handleLogin}>
               Login
             </button>
