@@ -23,9 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-connectionSlice.js
-
-
-requestSlice.js
-
-.gitignore
